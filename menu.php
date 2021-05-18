@@ -2,13 +2,13 @@
   <div class="wrapper ">
     <div class="sidebar" data-color="white" data-active-color="danger">
       <div class="logo">
-        <a href="https://www.creative-tim.com" class="simple-text logo-mini">
+        <a class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="assets/img/car.png">
           </div>
           <!-- <p>CT</p> -->
         </a>
-        <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+        <a class="simple-text logo-normal">
           SPK TOPSIS
         </a>
       </div>
@@ -21,7 +21,7 @@
           <?php if ($_SESSION[status]==admin){ ?>
 
             <li>
-              <a href="./dashboard.html">
+              <a href="halutama.php">
                 <i class="nc-icon nc-tv-2"></i>
                 <p>Dashboard</p>
               </a>
@@ -33,7 +33,7 @@
               </a>
             </li>
             <li>
-              <a href="./dashboard.html">
+              <a href="kriteria.php">
                 <i class="nc-icon nc-alert-circle-i"></i>
                 <p>Bobot Kriteria</p>
               </a>
@@ -45,7 +45,7 @@
               </a>
             </li>
             <li>
-              <a href="./dashboard.html">
+              <a href="user.php">
                 <i class="nc-icon nc-single-02"></i>
                 <p>Daftar Pengguna</p>
               </a>
@@ -60,7 +60,7 @@
           <?php } else if ($_SESSION[status]==pemilik){ ?>
             <!-- menu pemilik kos -->
             <li>
-              <a href="./dashboard.html">
+              <a href="halutama.php">
                 <i class="nc-icon nc-tv-2"></i>
                 <p>Dashboard</p>
               </a>
@@ -92,7 +92,7 @@
           <?php } else if ($_SESSION[status]==user){ ?>
             <!-- menu pencari kos -->
             <li>
-              <a href="./dashboard.html">
+              <a href="halutama.php">
                 <i class="nc-icon  nc-tv-2"></i>
                 <p>Dashboard</p>
               </a>
@@ -158,7 +158,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Keluar</a>
+                  <a class="dropdown-item" href="logout.php">Keluar</a>
 
                 </div>
               </li>
