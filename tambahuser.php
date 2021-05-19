@@ -1,6 +1,7 @@
 <?php
 include 'header.php';
 include 'menu.php';
+include 'connect.php';
 ?>
 
 
@@ -65,6 +66,52 @@ include 'menu.php';
             </div>
             </div>
           </form>
+
+          <?php
+
+            $nama=$_POST['nama'];
+            $alamat=$_POST['alamat'];
+            $telepon=$_POST['telepon'];
+            $email=$_POST['email'];
+            $tipe=$_POST['tipe'];
+            $username=$_POST['username'];
+            $password=$_POST['password'];
+
+            if(isset($nama,$telepon)){
+              if((!$nama)||(!$telepon)){
+              print "<script>alert ('Harap semua data diisi...!!');</script>";
+              print"<script> self.history.back('Gagal Menyimpan');</script>";
+              exit();
+              }
+
+            $add_kelas="INSERT INTO login(
+              nama,
+              alamat,
+              no_telepon,
+              email,
+              status,
+              user,
+              password_asli,
+              password) VALUES
+            ('$nama',
+              '$alamat',
+              '$telepon',
+              '$email',
+              '$tipe',
+              '$username',
+              '$password',
+              md5('$password'))";
+            mysql_query($add_kelas,$koneksi);
+
+            echo '
+            <script type="text/javascript">
+              alert ("Data Berhasil Ditambah!");
+            </script>
+            ';
+            echo '<meta http-equiv="refresh" content="1; url=user.php" />';
+
+            }
+            ?>
 
         </div>
       </div>

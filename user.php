@@ -36,8 +36,8 @@ include 'connect.php';
                           <td><?php echo $row['nama'];?></td>
                           <td><?php echo $row['status'];?></td>
                           <td>
-                            <a class='btn btn-warning btn-sm' href=edituser.php?idk=<?= $row['user'] ?> >Ubah</a>
-                            <a href="hapususer.php.php?idk=<?= $row['user']; ?>"  class="btn btn-danger btn-sm"
+                            <a class='btn btn-warning btn-sm' href=edituser.php?id_user=<?= $row['id_user'] ?> >Ubah</a>
+                            <a href="deleteuser.php?user=<?= $row['user']; ?>"  class="btn btn-danger btn-sm"
                               onclick="return confirm('Anda yakin Hapus data User <?= $row['nama']; ?> ?')">Hapus</a>
                           </td>
                         </tr>
