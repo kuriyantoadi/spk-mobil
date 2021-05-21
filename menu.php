@@ -26,12 +26,12 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <li>
+            <!-- <li>
               <a href="./dashboard.html">
                 <i class="nc-icon nc-key-25"></i>
                 <p>Pemilik KOS</p>
               </a>
-            </li>
+            </li> -->
             <li>
               <a href="kriteria.php">
                 <i class="nc-icon nc-alert-circle-i"></i>
