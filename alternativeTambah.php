@@ -21,7 +21,7 @@ include 'connect.php';
             </div>
 
             <div class="form-group"><center>
-              <input class="btn btn-primary" type="submit" value="Simpan" />
+              <input class="btn btn-primary btn-sm" type="submit" value="Simpan" />
               <a class="btn btn-warning btn-sm" href="alternative.php">Kembali</a>
             </div>
           </form>
@@ -49,7 +49,7 @@ include 'connect.php';
 
               </script>
               ';
-              echo '<meta http-equiv="refresh" content="1; url=alternavie.php" />';
+              echo '<meta http-equiv="refresh" content="1; url=alternative.php" />';
 
 
               }

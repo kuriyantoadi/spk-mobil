@@ -2,13 +2,13 @@
 	$host="localhost";
 	$user="root";
 	$pass="";
-	$dbase="indekos";
-	
+	$dbase="spk-mobil";
+
 	$koneksi=mysql_connect($host,$user,$pass);
 	if(!$koneksi){
 		die("Database mysql tidak terkoneksi");
 	}
-	
+
 	$seleksi=mysql_select_db($dbase,$koneksi);
 	if(!$seleksi){
 		die("Database tidak terseleksi");
