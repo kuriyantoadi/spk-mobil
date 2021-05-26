@@ -22,7 +22,7 @@ include 'connect.php';
 
             <div class="form-group"><center>
               <input class="btn btn-primary" type="submit" value="Simpan" />
-              <a class="btn btn-warning" href="kriteria.php">Kembali</a>
+              <a class="btn btn-warning btn-sm" href="alternative.php">Kembali</a>
             </div>
           </form>
 
