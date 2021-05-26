@@ -26,12 +26,8 @@
                 <p>Dashboard</p>
               </a>
             </li>
-            <!-- <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-key-25"></i>
-                <p>Pemilik KOS</p>
-              </a>
-            </li> -->
+
+
             <li>
               <a href="kriteria.php">
                 <i class="nc-icon nc-alert-circle-i"></i>
@@ -39,7 +35,13 @@
               </a>
             </li>
             <li>
-              <a href="./dashboard.html">
+              <a href="alternative.php">
+                <i class="nc-icon nc-bullet-list-67"></i>
+                <p>Alternative</p>
+              </a>
+            </li>
+            <li>
+              <a href="">
                 <i class="nc-icon nc-single-copy-04"></i>
                 <p>Hasil Penilai Topsis</p>
               </a>
