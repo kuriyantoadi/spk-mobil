@@ -24,7 +24,7 @@ include 'connect.php';
             </thead>
             <tbody>
                 <?php
-                $sql=mysql_query("SELECT * FROM tb_alternative ORDER BY nama_alternative DESC");
+                $sql=mysql_query("SELECT * FROM tb_alternative ORDER BY nama_alternative ASC");
                 $no=1;
                 while ($row=mysql_fetch_array($sql)){?>
                   <tr class='td' bgcolor='#FFF'>
