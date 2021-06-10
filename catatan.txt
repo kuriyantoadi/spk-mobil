@@ -11,6 +11,10 @@
 04 juni 2021
 - crud nilai kriteria
 
+10 juni 2021
+
+- Menghilangkan copryright di foother
+
 perbandingan database
 
 
