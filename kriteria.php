@@ -26,7 +26,7 @@ include 'connect.php';
             </thead>
             <tbody>
                 <?php
-                $sql=mysql_query("SELECT * FROM kriteria ORDER BY id_kriteria DESC");
+                $sql=mysql_query("SELECT * FROM tb_kriteria ORDER BY id_kriteria DESC");
                 $no=1;
                 while ($row=mysql_fetch_array($sql)){?>
                   <tr class='td' bgcolor='#FFF'>

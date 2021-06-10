@@ -4,3 +4,15 @@
 
 18 mei 2021
 - crud user di menu admin (ok)
+
+31 mei 2021
+- crud analisa
+
+04 juni 2021
+- crud nilai kriteria
+
+perbandingan database
+
+
+1. tb_mobil => pemilik
+2. tb_nilai_kriteria => t_kriteria

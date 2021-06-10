@@ -60,7 +60,7 @@ include 'connect.php';
                 }
 
 
-              $add_kelas="INSERT INTO kriteria(atribut,bobot_nilai,nama_kriteria) VALUES
+              $add_kelas="INSERT INTO tb_kriteria(atribut,bobot_nilai,nama_kriteria) VALUES
               ('$atribut','$nilai','$nama_kriteria')";
               mysql_query($add_kelas,$koneksi);
 

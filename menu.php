@@ -31,7 +31,20 @@
             <li>
               <a href="kriteria.php">
                 <i class="nc-icon nc-alert-circle-i"></i>
-                <p>Bobot Kriteria</p>
+                <p>Kriteria</p>
+              </a>
+            </li>
+            <li>
+              <li>
+                <a href="nilaiKriteria.php">
+                  <i class="nc-icon nc-alert-circle-i"></i>
+                  <p>Nilai Kriteria</p>
+                </a>
+              </li>
+              <li>
+              <a href="analisa.php">
+                <i class="nc-icon nc-bulb-63"></i>
+                <p>Analisa</p>
               </a>
             </li>
             <li>
