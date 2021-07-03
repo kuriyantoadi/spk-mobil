@@ -3,10 +3,10 @@ include 'header.php';
 include 'menu.php';
 include "connect.php";
 
-$id_alternative=$_GET['id_alternative'];
-$show_alternative="SELECT * FROM tb_alternative WHERE id_alternative='$id_alternative'";
-$hasil_alternative=mysql_query($show_alternative,$koneksi);
-$view_alternative=mysql_fetch_row($hasil_alternative);
+$id_mobil=$_GET['id_mobil'];
+$show_mobil="SELECT * FROM tb_mobil WHERE id_mobil='$id_mobil'";
+$hasil_mobil=mysql_query($show_mobil,$koneksi);
+$view_mobil=mysql_fetch_row($hasil_mobil);
 
 ?>
 
@@ -16,14 +16,14 @@ $view_alternative=mysql_fetch_row($hasil_alternative);
     <div class="col-md-12">
       <div class="card ">
         <div class="card-header ">
-          <h5 class="card-title"><center>Edit Alternative</h5>
+          <h5 class="card-title"><center>Edit mobil</h5>
 
 
           <form action="" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label>nama Alternative</label>
-              <input type="hidden" class="form-control" name="id_alternative" value="<?php print($view_alternative[0]);?>" required/>
-              <input type="text" class="form-control" name="nama_alternative" value="<?php print($view_alternative[1]);?>" required/>
+              <label>nama mobil</label>
+              <input type="hidden" class="form-control" name="id_mobil" value="<?php print($view_mobil[0]);?>" required/>
+              <input type="text" class="form-control" name="nama_mobil" value="<?php print($view_mobil[1]);?>" required/>
             </div>
 
             <div class="form-group"><center>
@@ -33,15 +33,15 @@ $view_alternative=mysql_fetch_row($hasil_alternative);
           </form>
 
           <?php
-            $id_alternative = $_POST['id_alternative'];
-            $nama_alternative = $_POST['nama_alternative'];
+            $id_mobil = $_POST['id_mobil'];
+            $nama_mobil = $_POST['nama_mobil'];
 
-            if(isset($nama_alternative)){
+            if(isset($nama_mobil)){
 
-            $add_alternative="UPDATE tb_alternative SET
-            nama_alternative='$nama_alternative'
-            WHERE id_alternative ='$id_alternative' ";
-            mysql_query($add_alternative,$koneksi);
+            $add_mobil="UPDATE tb_mobil SET
+            nama_mobil='$nama_mobil'
+            WHERE id_mobil ='$id_mobil' ";
+            mysql_query($add_mobil,$koneksi);
 
             echo '
             <script type="text/javascript">
@@ -62,3 +62,4 @@ $view_alternative=mysql_fetch_row($hasil_alternative);
 <?php
 include 'footer.php';
  ?>
+ 

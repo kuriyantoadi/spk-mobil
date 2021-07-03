@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.0.4.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: May 26, 2021 at 05:48 
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Inang: 127.0.0.1
+-- Waktu pembuatan: 29 Jun 2021 pada 07.28
+-- Versi Server: 5.5.32
+-- Versi PHP: 5.4.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,130 +14,22 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
--- Database: `spk-mobil`
+-- Basis data: `spk-mobil`
 --
+CREATE DATABASE IF NOT EXISTS `spk-mobil` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `spk-mobil`;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `analisa`
+-- Struktur dari tabel `kamar`
 --
 
-CREATE TABLE `analisa` (
-  `id_analisa` int(11) NOT NULL,
-  `id_kriteria` int(11) NOT NULL,
-  `id_pemilik` int(11) NOT NULL,
-  `nilainya` varchar(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `analisa`
---
-
-INSERT INTO `analisa` (`id_analisa`, `id_kriteria`, `id_pemilik`, `nilainya`) VALUES
-(1, 1, 1, '3'),
-(2, 2, 1, '2'),
-(3, 3, 1, '3'),
-(4, 4, 1, '2'),
-(5, 5, 1, '2'),
-(6, 6, 1, '2'),
-(7, 1, 2, '5'),
-(8, 2, 2, '4'),
-(9, 3, 2, '5'),
-(10, 4, 2, '4'),
-(11, 5, 2, '4'),
-(12, 6, 2, '4'),
-(13, 1, 3, '5'),
-(14, 2, 3, '2'),
-(15, 3, 3, '3'),
-(16, 4, 3, '2'),
-(17, 5, 3, '4'),
-(18, 6, 3, '3'),
-(19, 1, 4, '3'),
-(20, 2, 4, '2'),
-(21, 3, 4, '3'),
-(22, 4, 4, '2'),
-(23, 5, 4, '2'),
-(24, 6, 4, '4'),
-(26, 1, 5, '5'),
-(27, 2, 5, '2'),
-(28, 3, 5, '3'),
-(29, 4, 5, '3'),
-(30, 5, 5, '3'),
-(31, 6, 5, '4'),
-(32, 1, 8, '5'),
-(33, 2, 8, '2'),
-(34, 3, 8, '4'),
-(35, 4, 8, '2'),
-(36, 5, 8, '2'),
-(37, 6, 8, '4'),
-(38, 1, 9, '4'),
-(39, 2, 9, '2'),
-(40, 3, 9, '2'),
-(41, 4, 9, '2'),
-(42, 5, 9, '2'),
-(43, 6, 9, '3'),
-(44, 1, 10, '4'),
-(45, 2, 10, '2'),
-(46, 3, 10, '2'),
-(47, 4, 10, '2'),
-(48, 5, 10, '2'),
-(49, 6, 10, '2'),
-(50, 1, 11, '5'),
-(51, 2, 11, '3'),
-(52, 3, 11, '2'),
-(53, 4, 11, '3'),
-(54, 5, 11, '2'),
-(55, 6, 11, '2'),
-(56, 1, 12, '5'),
-(57, 2, 12, '2'),
-(58, 3, 12, '3'),
-(59, 4, 12, '4'),
-(60, 5, 12, '2'),
-(61, 6, 12, '2'),
-(63, 1, 13, '5'),
-(64, 2, 13, '2'),
-(65, 3, 13, '3'),
-(66, 4, 13, '5'),
-(67, 5, 13, '2'),
-(68, 6, 13, '2'),
-(69, 1, 14, '3'),
-(70, 2, 14, '2'),
-(71, 3, 14, '2'),
-(72, 4, 14, '2'),
-(73, 5, 14, '2'),
-(74, 6, 14, '2');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `fakultas`
---
-
-CREATE TABLE `fakultas` (
-  `id_fakultas` int(11) NOT NULL,
-  `nama_fakultas` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `fakultas`
---
-
-INSERT INTO `fakultas` (`id_fakultas`, `nama_fakultas`) VALUES
-(1, 'Teknik Komunikasi Dan Elektro'),
-(2, 'Teknologi Industri Dan Informatika');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `kamar`
---
-
-CREATE TABLE `kamar` (
-  `id_kamar` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `kamar` (
+  `id_kamar` int(11) NOT NULL AUTO_INCREMENT,
   `id_pemilik` int(11) NOT NULL,
   `tipe` varchar(50) NOT NULL,
   `deskripsi` text NOT NULL,
@@ -147,11 +39,12 @@ CREATE TABLE `kamar` (
   `gambar2` varchar(100) NOT NULL,
   `gambar3` varchar(100) NOT NULL,
   `gambar4` varchar(100) NOT NULL,
-  `status` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `status` varchar(15) NOT NULL,
+  PRIMARY KEY (`id_kamar`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `kamar`
+-- Dumping data untuk tabel `kamar`
 --
 
 INSERT INTO `kamar` (`id_kamar`, `id_pemilik`, `tipe`, `deskripsi`, `harga`, `tipeharga`, `gambar1`, `gambar2`, `gambar3`, `gambar4`, `status`) VALUES
@@ -166,39 +59,16 @@ INSERT INTO `kamar` (`id_kamar`, `id_pemilik`, `tipe`, `deskripsi`, `harga`, `ti
 (9, 11, 'putri', 'Disewakan kamar kost murah meriah, nyaman, fasilitas lengkap. Lokasi sangat dekat dengan Universitas Jenderal Soedirman UNSOED Purwokerto\r\nJl. Ahmad Djaelani Karangwangkal Purwokerto Utara', '300000', 'bulan', '145753909477321110.jpg', '14575392871197920773.jpg', '14575393761227180067.jpg', '145753909477321110.jpg', 'y'),
 (10, 12, 'putri', 'TERIMA KOST PUTRI ARSYILA (dekat Fakultas Kedokteran UNSOED Purwokerto)  Dekat RS Margono Soekarjo (Â± 5menit), 10 menit dari terminal Purwokerto, 15 menit dari Pusat Kota Purwokerto.', '800000', 'bulan', '_1_.jpg', '_4_.jpg', '_2_.jpg', '_3_.jpg', 'y'),
 (11, 13, 'putri', 'terima kost putri bersih dan nyaman fasiltas lengkap di dalam kamar ada kipas angin meja belajar dan lemari pakaian dan tempat tidur.fasilitas bersama ada ruang tamu, ruang santai ada tv dan kulkas,dan ada dapur beserta kompor dan gas. dan ada jemuran pakaian.', '450000', 'bulan', 'reno1.jpg', 'reno2.jpg', 'reno4.jpg', 'reno3.jpg', 'y'),
-(12, 14, 'putri', 'Kos/kost putri/siswi/mahasiswi/karyawati \"Wisma Sakinah\"\r\n\r\nKomplek GOR Purwokerto. Strategis, dekat dgn Unsoed/Unsud, Al Irsyad, sentra kuliner GOR. Lingkungan asri, aman, nyaman.', '500000', 'bulan', 'sakinah1.jpg', 'sakinah3.jpg', 'sakinah4.jpg', 'sakinah2.jpg', 'y');
+(12, 14, 'putri', 'Kos/kost putri/siswi/mahasiswi/karyawati "Wisma Sakinah"\r\n\r\nKomplek GOR Purwokerto. Strategis, dekat dgn Unsoed/Unsud, Al Irsyad, sentra kuliner GOR. Lingkungan asri, aman, nyaman.', '500000', 'bulan', 'sakinah1.jpg', 'sakinah3.jpg', 'sakinah4.jpg', 'sakinah2.jpg', 'y');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kriteria`
+-- Struktur dari tabel `login`
 --
 
-CREATE TABLE `kriteria` (
-  `id_kriteria` int(11) NOT NULL,
-  `atribut` varchar(50) NOT NULL,
-  `bobot_nilai` varchar(50) NOT NULL,
-  `nama_kriteria` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kriteria`
---
-
-INSERT INTO `kriteria` (`id_kriteria`, `atribut`, `bobot_nilai`, `nama_kriteria`) VALUES
-(2, 'benefit', '5', 'Biayaa'),
-(3, 'benefit', '3', 'Kenyamanan'),
-(4, 'benefit', '3', 'Keamanan'),
-(5, 'cost', '2', 'Jarak');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `id_user` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `login` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(50) COLLATE latin1_general_ci NOT NULL,
   `password` varchar(32) COLLATE latin1_general_ci NOT NULL,
   `password_asli` varchar(30) COLLATE latin1_general_ci NOT NULL,
@@ -206,11 +76,12 @@ CREATE TABLE `login` (
   `alamat` text COLLATE latin1_general_ci NOT NULL,
   `no_telepon` varchar(15) COLLATE latin1_general_ci NOT NULL,
   `email` varchar(50) COLLATE latin1_general_ci NOT NULL,
-  `status` enum('admin','pemilik','user') COLLATE latin1_general_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
+  `status` enum('admin','pemilik','user') COLLATE latin1_general_ci NOT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`id_user`, `user`, `password`, `password_asli`, `nama`, `alamat`, `no_telepon`, `email`, `status`) VALUES
@@ -222,237 +93,151 @@ INSERT INTO `login` (`id_user`, `user`, `password`, `password_asli`, `nama`, `al
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pemilik`
+-- Struktur dari tabel `tb_analisa`
 --
 
-CREATE TABLE `pemilik` (
-  `id_pemilik` int(11) NOT NULL,
-  `nama_kos` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `tb_analisa` (
+  `id_analisa` int(11) NOT NULL AUTO_INCREMENT,
+  `id_kriteria` int(11) NOT NULL,
+  `id_mobil` int(11) NOT NULL,
+  `nilainya` varchar(11) NOT NULL,
+  PRIMARY KEY (`id_analisa`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
--- Dumping data for table `pemilik`
+-- Dumping data untuk tabel `tb_analisa`
 --
 
-INSERT INTO `pemilik` (`id_pemilik`, `nama_kos`) VALUES
-(1, 'Wisma Lensa'),
-(2, 'Jasmine Kost'),
-(3, 'Greenhouse'),
-(4, 'ZINK Kost'),
-(5, 'Kos Bu Tia'),
-(8, 'Kost Putri Eksklusif'),
-(9, 'Kos Putri Kamaratih'),
-(10, 'Kos Yasmin'),
-(11, 'Kos Putri Ahmad'),
-(12, 'Kos Putri Arsyila'),
-(13, 'Wisma Ketapang'),
-(14, 'Wisma Sakinah'),
-(18, 'dita kos');
+INSERT INTO `tb_analisa` (`id_analisa`, `id_kriteria`, `id_mobil`, `nilainya`) VALUES
+(1, 1, 1, '2'),
+(2, 2, 1, '3'),
+(3, 3, 1, '1'),
+(4, 4, 1, '4'),
+(5, 5, 1, '3'),
+(6, 6, 1, '4'),
+(7, 1, 2, '3'),
+(8, 2, 2, '4'),
+(9, 3, 2, '2'),
+(10, 4, 2, '3'),
+(11, 5, 2, '3'),
+(12, 6, 2, '3'),
+(13, 1, 3, '3'),
+(14, 2, 3, '4'),
+(15, 3, 3, '2'),
+(16, 4, 3, '2'),
+(17, 5, 3, '3'),
+(18, 6, 3, '3');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `progdi`
+-- Struktur dari tabel `tb_kriteria`
 --
 
-CREATE TABLE `progdi` (
-  `id_progdi` int(11) NOT NULL,
-  `id_fakultas` int(11) NOT NULL,
-  `nama_progdi` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `tb_kriteria` (
+  `id_kriteria` int(11) NOT NULL AUTO_INCREMENT,
+  `atribut` varchar(50) NOT NULL,
+  `bobot_nilai` varchar(50) NOT NULL,
+  `nama_kriteria` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_kriteria`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data for table `progdi`
+-- Dumping data untuk tabel `tb_kriteria`
 --
 
-INSERT INTO `progdi` (`id_progdi`, `id_fakultas`, `nama_progdi`) VALUES
-(1, 1, 'D3 Teknik Telekomunikasi'),
-(2, 1, 'S1 Teknik Telekomunikasi '),
-(3, 1, 'S1 Teknik Elektro'),
-(4, 2, 'S1 Teknik Informatika'),
-(5, 2, 'S1 Software Engineering'),
-(6, 2, 'S1 Sistem Informasi'),
-(7, 2, 'S1 Teknik Industri'),
-(8, 2, 'S1 Desain Komunikasi Visual');
+INSERT INTO `tb_kriteria` (`id_kriteria`, `atribut`, `bobot_nilai`, `nama_kriteria`) VALUES
+(1, 'cost', '3', 'Harga'),
+(2, 'benefit', '4', 'Tahun Produksi'),
+(3, 'cost', '4', 'Kilometer'),
+(4, 'benefit', '2', 'Kapasitas Silinder'),
+(5, 'benefit', '4', 'Eksterior'),
+(6, 'benefit', '2', 'Kapasitas Penumpang');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_alternative`
+-- Struktur dari tabel `tb_mobil`
 --
 
-CREATE TABLE `tb_alternative` (
-  `id_alternative` int(11) NOT NULL,
-  `nama_alternative` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE IF NOT EXISTS `tb_mobil` (
+  `id_mobil` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_mobil` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_mobil`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `tb_alternative`
+-- Dumping data untuk tabel `tb_mobil`
 --
 
-INSERT INTO `tb_alternative` (`id_alternative`, `nama_alternative`) VALUES
-(19, 'new Avanza G'),
-(20, 'Xenia E'),
-(21, 'Vios'),
-(22, 'new Avanza Veloz'),
-(23, 'Agya G');
+INSERT INTO `tb_mobil` (`id_mobil`, `nama_mobil`) VALUES
+(1, 'Toyota Fortuner G TRD'),
+(2, 'Honda HR-V Prestige'),
+(3, 'Honda Brio RS'),
+(4, 'Honda Jazz RS'),
+(5, 'Honda Mobilio RS'),
+(6, 'Toyota Rush TRD Sportivo'),
+(7, 'Honda Freed E'),
+(8, 'Suzuki Ertiga GL'),
+(9, 'Toyota Innova G'),
+(10, 'Mitsubihi Pajero Sport SUV'),
+(11, 'Toyota Rush G'),
+(12, 'Toyota Avanza G'),
+(13, 'Honda City E'),
+(14, 'Toyota Yaris S'),
+(15, 'Mercedes-Benz C200'),
+(16, 'Mitsubishi Xpander '),
+(17, 'Daihatsu Terios R'),
+(18, 'Honda Accord'),
+(19, 'Honda Brio E'),
+(20, 'Toyota Avanza E'),
+(21, 'Nissan Grand Livina'),
+(22, 'Mercedes-Benz C250');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `t_kriteria`
+-- Struktur dari tabel `tb_nilai_kriteria`
 --
 
-CREATE TABLE `t_kriteria` (
-  `id_tkriteria` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tb_nilai_kriteria` (
+  `id_tkriteria` int(11) NOT NULL AUTO_INCREMENT,
   `id_kriteria` int(11) NOT NULL,
   `keterangan` varchar(100) NOT NULL,
-  `nkriteria` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `nkriteria` varchar(15) NOT NULL,
+  PRIMARY KEY (`id_tkriteria`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
 
 --
--- Dumping data for table `t_kriteria`
+-- Dumping data untuk tabel `tb_nilai_kriteria`
 --
 
-INSERT INTO `t_kriteria` (`id_tkriteria`, `id_kriteria`, `keterangan`, `nkriteria`) VALUES
-(1, 1, 'Kasur,Alamari', '1'),
-(2, 1, 'kasur, alamari,meja', '2'),
-(3, 1, 'kasur,almari,meja,kipas angin', '3'),
-(4, 1, 'kasur,almari,meja,kursi,kipas angin', '4'),
-(5, 1, 'kasur,alamari,meja,kursi,kipas angin,tv', '5'),
-(6, 2, '>=500000', '1'),
-(7, 2, '>500000<300000', '2'),
-(8, 2, '>300000<250000', '3'),
-(9, 2, '>250000<200000', '4'),
-(10, 2, '<=200000', '5'),
-(11, 3, 'dekat kampus,ruangan kamar luas', '1'),
-(12, 3, 'dekat kampus,dekat warung makan', '2'),
-(13, 3, 'dekat kampus,dekat warung makan,alfamart dan pasar', '3'),
-(14, 3, 'dekat dekat kampus,dekat warung makan,alfamart dan mall', '4'),
-(15, 3, 'dekat kampus,dekat warung makan,alfamart,pasar,atm,mall', '5'),
-(16, 4, 'keamanan dari cctv', '1'),
-(17, 4, 'penjaga kos', '2'),
-(18, 4, 'tinggal bersama pemilik kos', '3'),
-(19, 4, 'bersama pemilik kos dan terdapat cctv', '4'),
-(20, 4, 'tanggung jawab bersama', '5'),
-(21, 5, '>=1KM', '1'),
-(22, 5, '>1KM<500M', '2'),
-(23, 5, '>500M<250M', '3'),
-(24, 5, '>250m<50M', '4'),
-(25, 5, '<=50M', '5'),
-(26, 6, 'terdapat jadwal piket anak kos', '1'),
-(27, 6, 'kebersihan diambil dari pihak luar', '2'),
-(28, 6, 'pemilik kos membantu kebersihan hunian kos', '3'),
-(29, 6, 'kebersihan menjadi tanggung jawab bersama', '4'),
-(30, 6, 'kebersihan rutin menjadi tanggung jawab pemilik kos', '5');
+INSERT INTO `tb_nilai_kriteria` (`id_tkriteria`, `id_kriteria`, `keterangan`, `nkriteria`) VALUES
+(1, 1, '451.000.000 â€“ 650.000.000', '1'),
+(2, 1, '251.000.000 â€“ 450.000.000', '2'),
+(3, 1, '100.000.000 â€“ 250.000.000', '3'),
+(4, 1, '< 100.000.000', '4'),
+(5, 2, '2011 â€“ 2021', '4'),
+(6, 2, '2006 â€“ 2010', '3'),
+(7, 2, '2000 â€“ 2005', '2'),
+(8, 2, '< 2000', '1'),
+(9, 3, '101.000 â€“ 400.000', '1'),
+(10, 3, '51.000 â€“ 100.000', '2'),
+(11, 3, '15.000 â€“ 50.000', '3'),
+(12, 3, '< 15.000', '4'),
+(13, 5, 'Sangat Baik', '4'),
+(14, 5, 'Baik', '3'),
+(15, 5, 'Cukup', '2'),
+(16, 5, 'Tidak Baik', '1'),
+(17, 4, '2001â€“3500', '4'),
+(18, 4, '1501â€“2000', '3'),
+(19, 4, '1.001â€“ 1500', '2'),
+(20, 4, '<1000', '1'),
+(21, 6, '7', '4'),
+(22, 6, '5', '3'),
+(23, 6, '4', '2'),
+(24, 6, '2', '1');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `analisa`
---
-ALTER TABLE `analisa`
-  ADD PRIMARY KEY (`id_analisa`);
-
---
--- Indexes for table `fakultas`
---
-ALTER TABLE `fakultas`
-  ADD PRIMARY KEY (`id_fakultas`);
-
---
--- Indexes for table `kamar`
---
-ALTER TABLE `kamar`
-  ADD PRIMARY KEY (`id_kamar`);
-
---
--- Indexes for table `kriteria`
---
-ALTER TABLE `kriteria`
-  ADD PRIMARY KEY (`id_kriteria`);
-
---
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- Indexes for table `pemilik`
---
-ALTER TABLE `pemilik`
-  ADD PRIMARY KEY (`id_pemilik`);
-
---
--- Indexes for table `progdi`
---
-ALTER TABLE `progdi`
-  ADD PRIMARY KEY (`id_progdi`);
-
---
--- Indexes for table `tb_alternative`
---
-ALTER TABLE `tb_alternative`
-  ADD PRIMARY KEY (`id_alternative`);
-
---
--- Indexes for table `t_kriteria`
---
-ALTER TABLE `t_kriteria`
-  ADD PRIMARY KEY (`id_tkriteria`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `analisa`
---
-ALTER TABLE `analisa`
-  MODIFY `id_analisa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
---
--- AUTO_INCREMENT for table `fakultas`
---
-ALTER TABLE `fakultas`
-  MODIFY `id_fakultas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `kamar`
---
-ALTER TABLE `kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `kriteria`
---
-ALTER TABLE `kriteria`
-  MODIFY `id_kriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `pemilik`
---
-ALTER TABLE `pemilik`
-  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
---
--- AUTO_INCREMENT for table `progdi`
---
-ALTER TABLE `progdi`
-  MODIFY `id_progdi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `tb_alternative`
---
-ALTER TABLE `tb_alternative`
-  MODIFY `id_alternative` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
---
--- AUTO_INCREMENT for table `t_kriteria`
---
-ALTER TABLE `t_kriteria`
-  MODIFY `id_tkriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

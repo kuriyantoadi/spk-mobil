@@ -24,17 +24,17 @@ include 'connect.php';
             </thead>
             <tbody>
                 <?php
-                $sql=mysql_query("SELECT * FROM tb_alternative ORDER BY nama_alternative ASC");
+                $sql=mysql_query("SELECT * FROM tb_mobil ORDER BY nama_mobil ASC");
                 $no=1;
                 while ($row=mysql_fetch_array($sql)){?>
                   <tr class='td' bgcolor='#FFF'>
 
                     <td><center><?php echo $no++ ?></td>
-                    <td><?php echo $row['nama_alternative'];?></td>
+                    <td><?php echo $row['nama_mobil'];?></td>
                     <td><center>
-                        <a class="btn btn-warning btn-sm" href=alternativeEdit.php?id_alternative=<?= $row['id_alternative'] ?> >Ubah</a>
-                        <a href="alternativeHapus.php?id_a=<?= $row['id_alternative']; ?>"  class="btn btn-danger btn-sm"
-                          onclick="return confirm('Anda yakin Hapus data alternative <?= $row['nama_alternative']; ?> ?')">Hapus</a>
+                        <a class="btn btn-warning btn-sm" href=alternativeEdit.php?id_mobil=<?= $row['id_mobil'] ?> >Ubah</a>
+                        <a href="alternativeHapus.php?id_a=<?= $row['id_mobil']; ?>"  class="btn btn-danger btn-sm"
+                          onclick="return confirm('Anda yakin Hapus data alternative <?= $row['nama_mobil']; ?> ?')">Hapus</a>
 
                     </td>
                   </tr>

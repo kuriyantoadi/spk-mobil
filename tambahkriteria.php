@@ -23,7 +23,7 @@ include 'connect.php';
               <label>Atribut</label>
               <select class="form-control" name="atribut">
                 <option value="benefit">benefit</option>
-                <option value="benefit">cost</option>
+                <option value="cost">cost</option>
               </select>
             </div>
             <div class="form-group">

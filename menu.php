@@ -20,116 +20,123 @@
 
           <?php if ($_SESSION[status]==admin){ ?>
 
-            <li>
-              <a href="halutama.php">
-                <i class="nc-icon nc-tv-2"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
+          <li>
+            <a href="halutama.php">
+              <i class="nc-icon nc-tv-2"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
 
 
-            <li>
-              <a href="kriteria.php">
-                <i class="nc-icon nc-alert-circle-i"></i>
-                <p>Kriteria</p>
-              </a>
-            </li>
-            <li>
-              <li>
-                <a href="nilaiKriteria.php">
-                  <i class="nc-icon nc-alert-circle-i"></i>
-                  <p>Nilai Kriteria</p>
-                </a>
-              </li>
-              <li>
-              <a href="analisa.php">
-                <i class="nc-icon nc-bulb-63"></i>
-                <p>Analisa</p>
-              </a>
-            </li>
-            <li>
-              <a href="alternative.php">
-                <i class="nc-icon nc-bullet-list-67"></i>
-                <p>Alternative</p>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <i class="nc-icon nc-single-copy-04"></i>
-                <p>Hasil Penilai Topsis</p>
-              </a>
-            </li>
-            <li>
-              <a href="user.php">
-                <i class="nc-icon nc-single-02"></i>
-                <p>Daftar Pengguna</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-button-power"></i>
-                <p>Logout</p>
-              </a>
-            </li>
+          <li>
+            <a href="kriteria.php">
+              <i class="nc-icon nc-alert-circle-i"></i>
+              <p>Kriteria</p>
+            </a>
+          </li>
+          <li>
+          <li>
+            <a href="nilaiKriteria.php">
+              <i class="nc-icon nc-alert-circle-i"></i>
+              <p>Nilai Kriteria</p>
+            </a>
+          </li>
+          <li>
+            <a href="analisa.php">
+              <i class="nc-icon nc-bulb-63"></i>
+              <p>Nilai Alternative</p>
+
+            </a>
+          </li>
+          <li>
+            <a href="alternative.php">
+              <i class="nc-icon nc-bullet-list-67"></i>
+              <p>Alternative</p>
+            </a>
+          </li>
+          <li>
+            <a href="perhitungan.php">
+              <i class="nc-icon nc-single-copy-04"></i>
+              <p>Hasil Penilai Topsis</p>
+            </a>
+          </li>
+          <li>
+            <a href="user.php">
+              <i class="nc-icon nc-single-02"></i>
+              <p>Daftar Pengguna</p>
+            </a>
+          </li>
+          <li>
+            <a href="logout.php">
+              <i class="nc-icon nc-button-power"></i>
+              <p>Logout</p>
+            </a>
+          </li>
 
           <?php } else if ($_SESSION[status]==pemilik){ ?>
-            <!-- menu pemilik kos -->
-            <li>
-              <a href="halutama.php">
-                <i class="nc-icon nc-tv-2"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-badge"></i>
-                <p>Biodata</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-simple-add"></i>
-                <p>Input Kamar</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-paper"></i>
-                <p>Daftar Kamar</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-button-power"></i>
-                <p>Logout</p>
-              </a>
-            </li>
+          <!-- menu pemilik kos -->
+          <li>
+            <a href="halutama.php">
+              <i class="nc-icon nc-tv-2"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="./dashboard.html">
+              <i class="nc-icon nc-badge"></i>
+              <p>Biodata</p>
+            </a>
+          </li>
+          <li>
+            <a href="./dashboard.html">
+              <i class="nc-icon nc-simple-add"></i>
+              <p>Input Kamar</p>
+            </a>
+          </li>
+          <li>
+            <a href="./dashboard.html">
+              <i class="nc-icon nc-paper"></i>
+              <p>Daftar Kamar</p>
+            </a>
+          </li>
+          <li>
+            <a href="logout.php">
+              <i class="nc-icon nc-button-power"></i>
+              <p>Logout</p>
+            </a>
+          </li>
           <?php } else if ($_SESSION[status]==user){ ?>
-            <!-- menu pencari kos -->
-            <li>
-              <a href="halutama.php">
-                <i class="nc-icon  nc-tv-2"></i>
-                <p>Dashboard</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-chart-bar-32"></i>
-                <p>Rangking KOS</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-sound-wave"></i>
-                <p>Cari Kriteria</p>
-              </a>
-            </li>
-            <li>
-              <a href="./dashboard.html">
-                <i class="nc-icon nc-button-power"></i>
-                <p>Logout</p>
-              </a>
-            </li>
+          <!-- menu pencari kos -->
+          <li>
+            <a href="halutama.php">
+              <i class="nc-icon  nc-tv-2"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li>
+            <a href="rangking.php">
+              <i class="nc-icon nc-chart-bar-32"></i>
+              <p>Rangking Mobil</p>
+            </a>
+          </li>
+          <!-- <li>
+            <a href="nilaiKriteriaUser.php">
+              <i class="nc-icon nc-alert-circle-i"></i>
+              <p>Nilai Kriteria</p>
+            </a>
+          </li> -->
+          <li>
+            <a href="hitungtopsis.php">
+              <i class="nc-icon nc-sound-wave"></i>
+              <p>Cari Kriteria</p>
+            </a>
+          </li>
+          <li>
+            <a href="logout.php">
+              <i class="nc-icon nc-button-power"></i>
+              <p>Logout</p>
+            </a>
+          </li>
 
           <?php
           }

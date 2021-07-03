@@ -10,7 +10,7 @@ include 'connect.php';
     <div class="col-md-12">
       <div class="card ">
         <div class="card-header ">
-          <h3 class="card-title"><center>Analisa</h3>
+          <h3 class="card-title"><center>Nilai Kriteria Alternatif</h3>
 
           <a href="analisaTambah.php" class="btn btn-primary btn-sm">Tambah Analisa</a>
 
@@ -27,7 +27,7 @@ include 'connect.php';
             <tbody>
                 <?php
                 $sql=mysql_query("SELECT * FROM tb_kriteria, tb_analisa, tb_mobil WHERE
-                  tb_kriteria.id_kriteria = tb_analisa.id_kriteria AND tb_mobil.id_mobil=tb_analisa.id_mobil ORDER BY tb_analisa.id_analisa DESC ");
+                  tb_kriteria.id_kriteria = tb_analisa.id_kriteria AND tb_mobil.id_mobil=tb_analisa.id_mobil ORDER BY tb_analisa.id_analisa ASC ");
                 $no=1;
                 while ($row=mysql_fetch_array($sql)){?>
                   <tr class='td' bgcolor='#FFF'>
@@ -37,9 +37,9 @@ include 'connect.php';
                     <td><?php echo $row['nama_mobil'];?></td>
                     <td><center><?php echo $row['nilainya'];?></td>
                     <td><center>
-                        <a class="btn btn-warning btn-sm" href=alternativeEdit.php?id_alternative=<?= $row['id_alternative'] ?> >Ubah</a>
-                        <a href="alternativeHapus.php?id_a=<?= $row['id_alternative']; ?>"  class="btn btn-danger btn-sm"
-                          onclick="return confirm('Anda yakin Hapus data alternative <?= $row['nama_alternative']; ?> ?')">Hapus</a>
+                        <a class="btn btn-warning btn-sm" href=analisaEdit.php?id_analisa=<?= $row['id_analisa'] ?> >Ubah</a>
+                        <a href="analisaHapus.php?id_analisa=<?= $row['id_analisa']; ?>"  class="btn btn-danger btn-sm"
+                          onclick="return confirm('Anda yakin Hapus data Analisa <?= $row['nama_mobil']; ?> ?')">Hapus</a>
 
                     </td>
                   </tr>
@@ -56,6 +56,5 @@ include 'connect.php';
   </div>
 
 </div>
-
 
 <?php include 'footer.php' ?>

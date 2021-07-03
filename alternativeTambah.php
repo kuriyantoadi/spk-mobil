@@ -17,7 +17,7 @@ include 'connect.php';
 
             <div class="form-group">
               <label>Nama Alternavie</label>
-              <input type="text" class="form-control" name="nama_alternative" />
+              <input type="text" class="form-control" name="nama_mobil" />
             </div>
 
             <div class="form-group"><center>
@@ -28,7 +28,7 @@ include 'connect.php';
 
           <?php
 
-              $nama_alternative=$_POST['nama_alternative'];
+              $nama_alternative=$_POST['nama_mobil'];
 
               if(isset($nama_alternative)){
                 if(!$nama_alternative){
@@ -38,7 +38,7 @@ include 'connect.php';
                 }
 
 
-              $tambah_alternative="INSERT INTO tb_alternative(nama_alternative) VALUES
+              $tambah_alternative="INSERT INTO tb_mobil(nama_mobil) VALUES
               ('$nama_alternative')";
               mysql_query($tambah_alternative,$koneksi);
 

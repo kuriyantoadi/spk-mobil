@@ -28,8 +28,8 @@
     <input type="password" name="password" placeholder="password" required>
     <select class="form-control" name="tipe">
       <option value="" selected>- Pilih Level -</option>
-      <option value="user">Pencari Kos</option>
-      <option value="pemilik">Pemilik Kos</option>
+      <option value="user">User</option>
+      <!--<option value="pemilik">Pemilik Kos</option>-->
       <option value="admin">Administrator</option>
     </select>
     <button type="submit" name="" value="">Login</button>
