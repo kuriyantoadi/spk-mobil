@@ -57,7 +57,7 @@
           <li>
             <a href="perhitungan.php">
               <i class="nc-icon nc-single-copy-04"></i>
-              <p>Hasil Penilai Topsis</p>
+              <p>Proses Topsis</p>
             </a>
           </li>
           <li>
