@@ -48,6 +48,15 @@
   $(document).ready(function() {
     $('#example').DataTable();
   });
+
+function js_hitung() {
+  var x = document.getElementById("tampil_hitung");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 </script>
 </body>
 

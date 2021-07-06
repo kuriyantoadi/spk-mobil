@@ -1,0 +1,28 @@
+17 mei 2021
+- pembuatan login (ok)
+- menu dan header (ok)
+
+18 mei 2021
+- crud user di menu admin (ok)
+
+31 mei 2021
+- crud analisa
+
+04 juni 2021
+- crud nilai kriteria
+
+10 juni 2021
+
+- Menghilangkan copryright di foother
+
+12 juni 2021
+
+crud analisa
+edit kriteria masih bug saat update
+login
+
+perbandingan database
+
+
+1. tb_mobil => pemilik
+2. tb_nilai_kriteria => t_kriteria
