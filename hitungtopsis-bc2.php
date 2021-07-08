@@ -365,7 +365,6 @@ include 'connect.php';
           <br />
           <br />
           <table class="table table-bordered table-highlight">
-            <!-- test -->
             <thead>
               <tr>
                 <th>Ranking</th>
@@ -381,9 +380,7 @@ include 'connect.php';
               <tr>
                 <td><?php echo ($i+1); ?></td>
                 <td><?php echo $alternatifrangking[$i]; ?></td>
-                <td><?php echo round(($hasilrangking[$i]),2); ?></td>
-
-                <!-- <td><?php echo $hasilrangking[$i]; ?></td> -->
+                <td><?php echo $hasilrangking[$i]; ?></td>
               </tr>
               <?php
             }

@@ -14,14 +14,14 @@ include 'connect.php';
 
           <?php
 
-                                function jml_kriteria(){    
+                                function jml_kriteria(){
 
                                             $sql = "SELECT * FROM tb_kriteria";
                                             $query = mysql_query($sql);
                                             $count = mysql_num_rows($query);
 
                                             return $count;
-                                            
+
                                         }
 
                                 function get_kriteria(){
@@ -33,22 +33,22 @@ include 'connect.php';
                                                 $kri[$i] = $dataakriteria['nama_kriteria'];
                                                 $i++;
                                             }
-                                            
+
                                             return $kri;
                                         }
 
-                                function jml_alternatif(){  
+                                function jml_alternatif(){
 
                                             $sql = "SELECT * FROM tb_analisa GROUP BY id_mobil";
                                             $query = mysql_query($sql);
                                             $alternatif = mysql_num_rows($query);
 
                                             return $alternatif;
-                                            
+
                                         }
 
                                 function get_alt_name(){
-                                            
+
                                             $alternatif = mysql_query("SELECT * FROM tb_mobil");
                                             $i=0;
                                             while ($dataalternatif = mysql_fetch_array($alternatif))
@@ -56,7 +56,7 @@ include 'connect.php';
                                                 $alt[$i] = $dataalternatif['nama_mobil'];
                                                 $i++;
                                             }
-                                            
+
                                             return $alt;
 
                                 }
@@ -76,21 +76,21 @@ include 'connect.php';
                                                 {
                                                     $queryalternatifkriteria = mysql_query("SELECT * FROM tb_analisa WHERE id_mobil = '$dataalternatif[id_mobil]' AND id_kriteria = '$datakriteria[id_kriteria]'");
                                                     $dataalternatifkriteria = mysql_fetch_array($queryalternatifkriteria);
-                                                    
+
                                                     $alternatifkriteria[$i][$j] = $dataalternatifkriteria['nilainya'];
 
                                                     $j++;
                                                 }
                                                 $i++;
                                             }
-                                            
+
                                             return $alternatifkriteria;
                                         }
 
                                 function pembagi(){
 
                                     $pembagi = array();
-    
+
                                     for ($i=0;$i<count($kriteria);$i++)
                                     {
                                         $pembagi[$i] = 0;
@@ -101,7 +101,7 @@ include 'connect.php';
                                         $pembagi[$i] = sqrt($pembagi[$i]);
                                     }
 
-                                            
+
                                             return $pembagi;
                                 }
 
@@ -114,7 +114,7 @@ include 'connect.php';
                                                 $kep[$i] = $datakepentingan['bobot_nilai'];
                                                 $i++;
                                             }
-                                            
+
                                             return $kep;
 
 
@@ -129,7 +129,7 @@ include 'connect.php';
                                                 $cb[$i] = $datacostbenefit['atribut'];
                                                 $i++;
                                             }
-                                            
+
                                             return $cb;
 
 
@@ -168,10 +168,10 @@ include 'connect.php';
                                 ?>
 
 <div class="panel panel-default">
-                        
+
                         <div class="panel-body">
                             <div class="table-responsive">
-                                
+
                             <ul class="nav nav-tabs">
                               <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#home">Matrix Ternormalisasi</a>
@@ -195,7 +195,7 @@ include 'connect.php';
                                 <hr>
 
                                     <div class="table-responsive">
-                              
+
 
                                 <table class="table table-striped table-bordered table-hover">
 
@@ -205,12 +205,12 @@ include 'connect.php';
                                         <?php
                                         for($i=1;$i<=$k;$i++){
                                             echo "<th>".ucwords($kri[$i])."</th>";
-                                            
+
                                         }
                                         ?>
                                         </tr>
                                     </thead>
-                                    
+
                                     <tr>
                                         <?php
                                         for($i=0;$i<$a;$i++){
@@ -226,7 +226,7 @@ include 'connect.php';
                                         ?>
 
                                     </tr>
-                                    
+
 
                                 </table>
 
@@ -235,13 +235,13 @@ include 'connect.php';
 
 
                             </div>
-                                 
+
                                 <hr>
                                 <h3 class="page-head-line">PEMBAGI</h3>
                                 <hr>
 
                                     <div class="table-responsive">
-                              
+
 
                                 <table class="table table-striped table-bordered table-hover">
 
@@ -251,16 +251,16 @@ include 'connect.php';
                                         <?php
                                         for($i=1;$i<=$k;$i++){
                                             echo "<th>".ucwords($kri[$i])."</th>";
-                                            
+
                                         }
                                         ?>
                                         </tr>
                                     </thead>
-                                    
+
                                     <tr><td><b>Pembagi</b></td>
 
                                     <?php
-                                    
+
                                         for($i=0;$i<$k;$i++){
                                             $pembagi[$i] = 0;
                                             for($j=0;$j<$a;$j++){
@@ -269,13 +269,13 @@ include 'connect.php';
                                             $pembagi[$i] = round(sqrt($pembagi[$i]),4);
                                             echo "<td>".$pembagi[$i]."</td>";
                                         }
-                                                                        
+
                                     ?>
 
                                     </tr>
                                 </table>
 
-                                
+
 
 
 
@@ -285,7 +285,7 @@ include 'connect.php';
                             <hr>
 
                                     <div class="table-responsive">
-                              
+
 
                                 <table class="table table-striped table-bordered table-hover">
 
@@ -295,12 +295,12 @@ include 'connect.php';
                                         <?php
                                         for($i=1;$i<=$k;$i++){
                                             echo "<th>".ucwords($kri[$i])."</th>";
-                                            
+
                                         }
                                         ?>
                                         </tr>
                                     </thead>
-                                    
+
                                     <tr>
                                         <?php
                                         for($i=0;$i<$a;$i++){
@@ -314,7 +314,7 @@ include 'connect.php';
                                         ?>
 
                                     </tr>
-                                    
+
 
                                 </table>
 
@@ -333,7 +333,7 @@ include 'connect.php';
 
 
                                     <div class="table-responsive">
-                              
+
 
                                 <table class="table table-striped table-bordered table-hover">
 
@@ -343,12 +343,12 @@ include 'connect.php';
                                         <?php
                                         for($i=1;$i<=$k;$i++){
                                             echo "<th>".ucwords($kri[$i])."</th>";
-                                            
+
                                         }
                                         ?>
                                         </tr>
                                     </thead>
-                                    
+
                                     <tr>
                                         <?php
                                         for($i=0;$i<$a;$i++){
@@ -362,7 +362,7 @@ include 'connect.php';
                                         ?>
 
                                     </tr>
-                                    
+
 
                                 </table>
 
@@ -380,7 +380,7 @@ include 'connect.php';
                                 <hr>
 
                                 <div class="table-responsive">
-                              
+
 
                                 <table class="table table-striped table-bordered table-hover">
 
@@ -390,16 +390,16 @@ include 'connect.php';
                                         <?php
                                         for($i=1;$i<=$k;$i++){
                                             echo "<th>".ucwords($kri[$i])."</th>";
-                                            
+
                                         }
                                         ?>
                                         </tr>
                                     </thead>
-                                    
+
                                     <tr><td><b>A+</b></td>
 
                                     <?php
-                                    
+
                                         for($i=0;$i<$k;$i++){
                                             for($j=0;$j<$a;$j++){
                                                 $temp[$j] = $bob[$j][$i];
@@ -410,7 +410,7 @@ include 'connect.php';
                                                 $aplus[$i] = min($temp);
                                             echo "<td>".$aplus[$i]."</td>";
                                         }
-                                                                        
+
                                     ?>
 
                                     </tr>
@@ -418,7 +418,7 @@ include 'connect.php';
                                     <tr><td><b>A-</b></td>
 
                                     <?php
-                                    
+
                                         for($i=0;$i<$k;$i++){
                                             for($j=0;$j<$a;$j++){
                                                 $temp[$j] = $bob[$j][$i];
@@ -429,7 +429,7 @@ include 'connect.php';
                                                 $amin[$i] = max($temp);
                                             echo "<td>".$amin[$i]."</td>";
                                         }
-                                                                        
+
                                     ?>
 
                                     </tr>
@@ -441,10 +441,10 @@ include 'connect.php';
                                 <table class="table table-striped table-bordered table-hover">
 
                                     <thead><tr><th>#</th><th>D+</th><th>D-</th></tr></thead>
-                                    
-                                    
+
+
                                     <?php
-                                    
+
                                         for($i=0;$i<$a;$i++){
                                             echo "<tr><td><b>".ucwords($alt_name[$i])."</b></td>";
                                             $dplus[$i] = 0;
@@ -460,16 +460,10 @@ include 'connect.php';
                                             $dmin[$i] = round(sqrt($dmin[$i]),4);
                                             echo "<td>".$dmin[$i]."</td>";echo "</tr>";
                                         }
-                                                                        
+
                                     ?>
 
                                     </tr>
-
-                                    
-
-                                    
-
-
                                 </table>
 
 
@@ -478,7 +472,7 @@ include 'connect.php';
                               </div>
                               <div class="tab-pane container fade" id="menu3">
                                 <hr>
-                                <h3 class="page-head-line">Preferensi</h3>
+                                <h3 class="page-head-line">Preferensi1</h3>
                                 <hr>
 
                                 <?php
@@ -487,7 +481,7 @@ include 'connect.php';
                                     echo "<thead><tr><th></th><th>V</th></tr></thead>";
                                     for($i=0;$i<$a;$i++){
                                         echo "<tr><td><b>".ucwords($alt_name[$i])."</b></td>";
-                                        $v[$i][0] = round(($dmin[$i] / ($dplus[$i]+$dmin[$i])),4);
+                                        $v[$i][0] = round(($dmin[$i] / ($dplus[$i]+$dmin[$i])),2);
                                         $v[$i][1] = $alt_name[$i];
                                         echo "<td>".$v[$i][0]."</td>";
                                     }
@@ -495,7 +489,7 @@ include 'connect.php';
                                     usort($v, "cmp");
                                     $i = 0;
                                     while (list($key, $value) = each($v)) {
-                                        $hsl[$i] = array($value[1],$value[0]); 
+                                        $hsl[$i] = array($value[1],$value[0]);
                                         $i++;
                                     }
                                     // ======================================================================== //
@@ -508,7 +502,7 @@ include 'connect.php';
                                         echo "<tr><td>".($i+1).".</td><td>".ucwords(($hsl[$i][0]))."</td><td>".$hsl[$i][1]."</td></tr>";
                                     }
                                     echo "</tbody></table><hr>";
-                                    
+
                                     ?>
 
 
@@ -519,7 +513,7 @@ include 'connect.php';
                             </div>
                         </div>
                     </div>
-          
+
         </div>
 
         </div>
