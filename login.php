@@ -1,43 +1,53 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>SPK Mobil</title>
 
-<head>
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
-  <meta charset="UTF-8">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-  <title>Form Login </title>
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
 
-  <link rel="stylesheet" href="assets/form-login/css/reset.css">
 
-  <link rel="stylesheet" href="assets/form-login/css/style.css" media="screen" type="text/css" />
+    <!-- Custom styles for this template -->
+    <link href="assets/css/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
 
-</head>
+<main class="form-signin">
+  <img src="assets/img/car.png" width="200px" alt="">
+  <h3>Login SPK Mobil</h3>
+  <form action="cekpasswd.php" method="post">
 
-<body>
-
-  <div class="wrap">
-    <div class="avatar">
-      <img src="assets/form-login/assets/user.png">
+    <div class="form-floating">
+      <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Username">
     </div>
-    <form class="" action="cekpasswd.php" method="post">
-
-    <input type="text" name="username" placeholder="username" required>
-    <div class="bar">
-      <i></i>
+    <div class="form-floating">
+      <input name="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
     </div>
-    <input type="password" name="password" placeholder="password" required>
-    <select class="form-control" name="tipe">
-      <option value="" selected>- Pilih Level -</option>
-      <option value="user">User</option>
-      <!--<option value="pemilik">Pemilik Kos</option>-->
-      <option value="admin">Administrator</option>
-    </select>
-    <button type="submit" name="" value="">Login</button>
-  </div>
+    <button style="margin-bottom: 5px" class="w-100 btn btn-primary" type="submit">Login</button>
+    <a class="w-100 btn btn-warning" href="index.php">Kembali</a>
   </form>
+</main>
 
-  <script src="assets/form-login/js/index.js"></script>
 
-</body>
 
+  </body>
 </html>

@@ -54,7 +54,7 @@ include 'connect.php';
                                 </select>
 
                               </div>
-
+                              
                               <div class="form-group">
               <label>Nilainya</label>
               <select class="form-control" name="nilai">
@@ -66,48 +66,48 @@ include 'connect.php';
               </select>
 
             </div>
-
-
+                              
+                              
                               <div class="form-group">
                                 <input class="btn btn-success" type="submit" value="Simpan" />
                                 <a class="btn btn-warning" href="analisa.php">Kembali</a>
                               </div>
-
+                              
                             </form>
 
 
 
                               <?php
-
+                                      
 
                                       $kriteria=$_POST['kriteria'];
                                       $nama_mobil=$_POST['nama_mobil'];
                                       $nilai=$_POST['nilai'];
-
+                                      
 
                                       if(isset($nilai,$kriteria)){
                                         if((!$nilai)||(!$kriteria)){
                                         print "<script>alert ('Harap semua data diisi...!!');</script>";
-                                        print"<script> self.history.back('Gagal Menyimpan');</script>";
+                                        print"<script> self.history.back('Gagal Menyimpan');</script>"; 
                                         exit();
-                                        }
+                                        } 
 
-
-                                      $add_kelas="INSERT INTO tb_analisa (id_kriteria,id_mobil,nilainya) VALUES
+                                     
+                                      $add_kelas="INSERT INTO tb_analisa (id_kriteria,id_mobil,nilainya) VALUES 
                                       ('$kriteria','$nama_mobil','$nilai')";
                                       mysql_query($add_kelas,$koneksi);
 
                                       echo '
                                       <script type="text/javascript">
-
+                                       
                                              alert ("Data Berhasil Ditambah!");
-
+                                             
                                       </script>
                                       ';
                                       echo '<meta http-equiv="refresh" content="1; url=analisa.php" />';
 
 
-                                      }
+                                      } 
 
                                 ?>
 
@@ -121,3 +121,4 @@ include 'connect.php';
 <?php
 include 'footer.php';
  ?>
+ 

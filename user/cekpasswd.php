@@ -3,11 +3,9 @@
 	include("connect.php");
 	$username=$_POST['username'];
 	$password=$_POST['password'];
-	// $tipe=$_POST['tipe'];
+	$tipe=$_POST['tipe'];
 
-
-
-	$sql_user = "select * from login where user='$username' and password=md5('$password') and status='admin'";
+	$sql_user = "select * from login where user='$username' and password=md5('$password') and status='$tipe'";
 	$hasil_user = mysql_query($sql_user,$koneksi);
 	$rowcount = mysql_num_rows($hasil_user);
 	if ($rowcount == 1) {
@@ -22,6 +20,6 @@
 	}
 	else
 	{
-		header("Location:./login.php?msg=pass_salah");
+		header("Location:./login.php?msg=Username atau password yang anda masukkan salah");
 	}
 ?>
